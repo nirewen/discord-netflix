@@ -25,6 +25,7 @@ Then, when you're finished, you can open a pull request here.
 * [Nirewen#9011](http://github.com/nirewen)
 * [Keyygan#0001](https://github.com/keyygan)
 * [Dmfj#0001](https://github.com/dmfj)
+* [Wistful__#9063](https://hexaplexsoftware.ga/wist/)
 
 # Errors
 If Discord is not opened, or, for some reason, the RPC Client couldn't connect to it, an error will show in the app. It disappears in 15 seconds.

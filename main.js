@@ -1,14 +1,15 @@
 const {BrowserWindow, app} = require('electron');
-const {Client} = require('discord-rpc');
-const widevine = require('electron-widevinecdm');
-const moment   = require('moment');
-const rpc      = new Client({transport: 'ipc'});
+const {Client} 			   = require('discord-rpc');
+const widevine             = require('electron-widevinecdm');
+const moment               = require('moment');
+const rpc                  = new Client({transport: 'ipc'});
 
 widevine.load(app);
 
 let appID = '387083698358714368',
     mainWindow,
     smallImageKey,
+	smallImageText,
     start, end,
     WindowSettings = {
         backgroundColor: '#FFF',
@@ -78,23 +79,28 @@ async function checkNetflix() {
                 : title,
             curr = parseInt(new Date().getTime().toString().slice(0, 10));
         let endTime = null;
-        
+         
         if (avatar) smallImageKey = avatar;
 
         if (videoDuration && videoCurrentTime) {
             if (!videoPaused) {
                 let now = moment.utc();
                 let remaining = moment.duration(videoDuration - videoCurrentTime, 'seconds');
-
+				
+				
+				smallImageText = "Playing";
                 endTime = now.add(remaining).unix();
-            }
+            } 
+			if (videoPaused) {smallImageText = "Paused"}
         }
         
         rpc.setActivity({
             details: name,
             state: video,
             largeImageKey: 'netflix',
+			largeImageText: 'Netflix',
             smallImageKey,
+			smallImageText,
             instance: false,
             endTimestamp: endTime,
         });
@@ -111,7 +117,7 @@ rpc.on('ready', () => {
 app.on('ready', () => {
     mainWindow = new BrowserWindow(WindowSettings);
     mainWindow.maximize();
-    mainWindow.loadURL("http://www.netflix.com/");
+    mainWindow.loadURL("https://www.netflix.com/");
     login();
 });
 
