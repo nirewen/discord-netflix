@@ -90,7 +90,7 @@ async function checkNetflix() {
 				
 				smallImageText = "Playing";
                 endTime = now.add(remaining).unix();
-            } else (videoPaused) { smallImageText = "Paused" }
+            } else if (videoPaused) { smallImageText = "Paused" }
         }
         
         rpc.setActivity({
