@@ -9,6 +9,13 @@ You can download a prebuilt installer from [releases](https://github.com/nirewen
 ## Prepairing the environment
 You will need [Node.js](http://nodejs.org/en/download) installed and added to the PATH, so just download the installer and make sure to select the box to add to PATH. Version must be 7.0.0 >
 
+## Installing via. Git
+To install the latest version (from master), you will have to clone the project by git.
+
+1. Install [Git.](https://git-scm.com/downloads) 
+2. Once done, open a cmd window and cd into a folder. Ex. `cd /path/to/folder` Then once in a folder type `https://github.com/nirewen/discord-netflix.git`
+3. Now follow the directions down below, it will tell you everything you need to know inorder to run the application.
+
 ## Running
 You have to install the dependencies. So, just run `npm install` in the repo's folder.
 Once it's done, run `npm start` to start the application.
