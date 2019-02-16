@@ -24,7 +24,7 @@ npm start
 ## Build and distribution
 This application includes various build scripts for distribution on Windows, macOS, and Linux. Upon running a build script, a NSIS installer will be generated along with the app being compiled in 32-bit natively or 64-bit if your machine/the environment the application is being ran on supports it.  
 To build the application for distribution, run the build script that fits the environment where the application will be running.
-```
+```bash
 # Windows
 npm run build:win
 
