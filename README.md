@@ -1,30 +1,43 @@
 # discord-netflix [![Build Status](https://api.travis-ci.com/nirewen/discord-netflix.svg?branch=master)](https://travis-ci.com/nirewen/discord-netflix)
 
-A Netflix wrapper that uses Discord RPC to show what you're watching using the new Rich Presence
+A Netflix wrapper that uses the [Discord RPC](https://github.com/discordapp/discord-rpc) (Rich Presence Client) to show what you're watching.
 
 # Prebuilt installers
-You can download a prebuilt installer from [releases](https://github.com/nirewen/discord-netflix/releases) if you want.
+You can download a prebuilt installer from [releases](https://github.com/nirewen/discord-netflix/releases).
 
 # Building yourself
 
-## Prepairing the environment
-You will need: <br>
-- [Node.js](http://nodejs.org/en/download) (Version > 7.0.0)<br>
+## Preparing the environment
+You will need:
+- [Node.js](http://nodejs.org/en/download) (Version > 7.0.0)
 - [Git](https://git-scm.com/downloads)
 
-Make sure you add both to the PATH.
+Make sure you add both to the `PATH`.
 
 ## Running
-You have to install the dependencies. So, just run `npm install` in the repo's folder.<br>
-Once it's done, run `npm start` to start the application.
+Make sure you are in the repo's folder. Then run these commands to install the dependencies and start the application.
+```
+npm install
+npm start
+```
 
 ## Build and distribution
-The app also have a build method, used for distribution. It will generate a NSIS installer for the app, and a packaged version of it.<br>
-To build the app for distribution, run `npm run dist`.
+This application includes various build scripts for distribution on Windows, macOS, and Linux. Upon running a build script, a NSIS installer will be generated along with the app being compiled in 32-bit natively or 64-bit if your machine/the environment the application is being ran on supports it.  
+To build the application for distribution, run the build script that fits the environment where the application will be running.
+```
+# Windows
+npm run build:win
+
+# macOS
+npm run build:mac
+
+# Linux
+npm run build:linux
+```
 
 # Contributing
-If you have a suggestion, an implementation, a fix, you can fork this repo and make all the changes you want.<br>
-Then, when you're finished, you can open a pull request here.
+If you have a suggestion, new feature or a fix, you can fork this repo and make those updates.  
+Afterward, you may open a pull request here.
 
 ## Contributors
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -34,30 +47,29 @@ Then, when you're finished, you can open a pull request here.
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 # Errors
-If Discord is not opened, or, for some reason, the RPC Client couldn't connect to it, an error will show in the app. It disappears in 15 seconds.<br>
-Even if Discord is not opened, you can still use the app as a normal Netflix wrapper.
+If Discord is not opened or the RPC client couldn't connect to Discord, an error will show in the app. It disappears in 15 seconds.  
+Even if Discord is not opened, this app can still function normally as a Netflix wrapper.
 
 # Things you should know
-The app has support for most of the avatars available in Netflix, and shows in the Rich Presence (see previews).
+The app has support for most of the avatars available in Netflix and shows in the Rich Presence (see previews).
 
 # Planned
-Netflix Party support so you and your friends can watch anything together (and show in the Rich Presence, obviously)
+Support for [Netflix Party](https://www.netflixparty.com/) so you and your friends can watch anything together with Rich Presence support.
 
 # Previews
 
-Idle: <br>
+Idle:  
 ![Browsing](https://nirewen.s-ul.eu/i7XVpo6t.png)
 
-
-Watching a Show: <br> 
+Watching a Show:  
 ![Watching](https://img.hexaplexsoftware.ga/saved/VRBYhv2q.png) 
 
-Watching a Movie: <br>
+Watching a Movie:  
 ![Watching](https://img.hexaplexsoftware.ga/saved/r2vii1T7.png)
 
 
 # Tutorials
 
-`PT-BR`<br>
+`PT-BR`  
 [![](https://i.ytimg.com/vi/8AYBykvOKzo/0.jpg)](https://www.youtube.com/watch?v=8AYBykvOKzo)<br>
 Credits: Maicon Alves (Maik`#8097`)
