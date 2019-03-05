@@ -48,9 +48,6 @@ Even if Discord is not opened, you can still use the app as a normal Netflix wra
 # Things you should know
 The app has support for most of the avatars available in Netflix, and shows in the Rich Presence (see previews).
 
-# Planned
-Netflix Party support so you and your friends can watch anything together (and show in the Rich Presence, obviously)
-
 # Previews
 
 Idle: <br>
@@ -62,9 +59,6 @@ Watching a Show: <br>
 
 Watching a Movie: <br>
 ![Watching](https://img.hexaplexsoftware.ga/saved/r2vii1T7.png)
-
-Watching an Interactive video: <br>
-![Watching](https://img.hexaplexsoftware.ga/saved/8312.png)
 
 # Tutorials
 

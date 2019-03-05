@@ -1,6 +1,5 @@
 const Electron = require('electron')
 const scripts = require('../util/scripts')
-const netflixParty = require('../NetflixParty');
 const moment = require('moment')
 const crypto = require('crypto')
 const path = require('path')
@@ -90,12 +89,11 @@ module.exports = class BrowserWindow extends Electron.BrowserWindow {
             if (this.party.sessionData.id !== null) {
                 var videoIdMatch = this.getURL().match(/^.*\/([0-9]+)\??.*/)
                 if (videoIdMatch) {
-                    console.log("Partying with " + this.party.sessionData.partyCount + " people");
-                    var videoId = parseInt(videoIdMatch[1]);
+                    var videoId = parseInt(videoIdMatch[1])
                     activity.partyId = this.party.sessionData.id
                     activity.partySize = this.party.sessionData.partyCount
                     activity.partyMax = this.party.sessionData.partyCount + 1
-                    activity.joinSecret = Buffer.from(videoId + "," + this.party.sessionData.id).toString('base64')
+                    activity.joinSecret = Buffer.from(videoId + ',' + this.party.sessionData.id).toString('base64')
                     activity.instance = true
                 }
             }

@@ -14,16 +14,16 @@ module.exports = class NetflixParty {
     }
 
     ipcSetup (mainWindow) {
-        ipcMain.on('np', (sender, data) => {
+        ipcMain.on('np', (_sender, data) => {
             // This is just loopback so the renderer can request a specific action be called
-            if (data.type == "loopbackCall") {
+            if (data.type === 'loopbackCall') {
                 mainWindow.webContents.send('np', {
                     type: data.call,
                     data: data.data
-                });
+                })
             }
 
-            if (data.type == "getDiscordUser") {
+            if (data.type === 'getDiscordUser') {
                 if (this.user !== null) {
                     mainWindow.webContents.send('np', {
                         type: 'discordUser',
@@ -32,18 +32,18 @@ module.exports = class NetflixParty {
                 }
             }
 
-            if (data.type == "sessionUpdate") {
+            if (data.type === 'sessionUpdate') {
                 this.sessionData.partyCount = data.partyCount
             }
 
             // This is a response for an action taken (like a promise return but only async)
-            if (data.type == "response") {
-                if (data.response == "createSession") {
+            if (data.type === 'response') {
+                if (data.response === 'createSession') {
                     this.sessionData.id = data.sessionId
-                } else if (data.response == "leaveSession") {
+                } else if (data.response === 'leaveSession') {
                     this.sessionData.id = null
                 }
             }
-        });
+        })
     }
 }
