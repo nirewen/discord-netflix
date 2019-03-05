@@ -44,6 +44,10 @@ app.on('ready', () => {
     let navigationLoad = (loadType) => {
         // This is a bit ugly but it works
         let type = mainWindow.webContents.getURL().split('/').slice(1, 4)[2]
+        
+        mainWindow.webContents.send('np', {
+            type: 'navigation',
+        });
 
         if (type === 'watch') {
             // They're watching something so let's setup NetflixParty

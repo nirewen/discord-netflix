@@ -1027,17 +1027,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         }
 
-        // This is fired when they navigate away
-        window.addEventListener('popstate', () => {
-            if (sessionId !== null) {
-                ipcRenderer.send('np', {
-                    type: 'loopbackCall',
-                    call: 'leaveSession',
-                    data: {}
-                })
-            }
-        })
-
         var joinSessionModal = null
         var createSessionModal = null
         // interaction with the electron app
@@ -1155,6 +1144,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 if (request.type === 'discordUser') {
                     userInfo = request.data
+                }
+
+                if (request.type === 'navigation') {
+                    if (sessionId !== null) {
+                        ipcRenderer.send('np', {
+                            type: 'loopbackCall',
+                            call: 'leaveSession',
+                            data: {}
+                        })
+                    }
                 }
 
                 if (request.type === 'initialize') {
