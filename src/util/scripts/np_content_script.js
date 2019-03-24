@@ -1027,17 +1027,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         }
 
-        // This is fired when they navigate away
-        window.addEventListener('popstate', () => {
-            if (sessionId !== null) {
-                ipcRenderer.send('np', {
-                    type: 'loopbackCall',
-                    call: 'leaveSession',
-                    data: {}
-                })
-            }
-        })
-
         var joinSessionModal = null
         var createSessionModal = null
         // interaction with the electron app
@@ -1157,6 +1146,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     userInfo = request.data
                 }
 
+				if (request.type === 'navigation') {
+                    if (sessionId !== null) {
+                        ipcRenderer.send('np', {
+                            type: 'loopbackCall',
+                            call: 'leaveSession',
+                            data: {}
+                        })
+                    }
+                }
+				
                 if (request.type === 'initialize') {
                     ipcRenderer.send('np', {
                         type: 'getDiscordUser'
@@ -1164,6 +1163,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                     // This event is called before everything is properly loaded
                     waitForEl('.PlayerControlsNeo__button-control-row .ReportAProblemPopupContainer', function () {
+						$('.NetflixPartyContainer').remove()
+						
                         jQuery('.nf-player-container').after(partyStyling)
                         var button = $(`
               <div class="touchable NetflixPartyContainer PlayerControls--control-element nfp-popup-control">
@@ -1302,8 +1303,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             button.removeClass('PlayerControls--control-element--active')
                             popupContainer.removeClass('active')
                         })
-
-                        $('.PlayerControlsNeo__button-control-row .ReportAProblemPopupContainer').before(button)
+						
+						$('.PlayerControlsNeo__button-control-row .ReportAProblemPopupContainer').before(button)
 
                         var controlLockCheck = $('.lock-controls-input')
                         if (sessionLockControls) {

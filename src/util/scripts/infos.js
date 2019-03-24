@@ -44,7 +44,7 @@ module.exports = function () {
         let interactive = false
         // TODO: Better interactive video check. Severe problems are caused in the solutions currently found
 
-        name = name.querySelector('h4') ? name.querySelector('h4').innerHTML : name.innerText
+        name = name.querySelector('h4') ? name.querySelector('h4').innerText : name.innerText
 
         return { name, title, episode, duration, currentTime, paused, interactive, avatar, userName }
     }
