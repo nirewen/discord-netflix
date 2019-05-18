@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "postinstall": "node electron-widevinecdm/scripts/install.js",
+    "preinstall": "node src/npm/install_widevinecdm.js",
     "dist:mac": "build -m --publish always",
     "dist:linux": "build -l --publish always",
     "dist:win": "build -w --publish always"
@@ -28,7 +29,7 @@
   "build": {
     "appId": "com.netflix.nirewen",
     "win": {
-      "target": "nsis-web",
+      "target": "nsis",
       "icon": "./assets/icon.png"
     },
     "linux": {
