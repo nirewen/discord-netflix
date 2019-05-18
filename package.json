@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
+    "postinstall": "node electron-widevinecdm/scripts/install.js",
     "dist:mac": "build -m --publish always",
     "dist:linux": "build -l --publish always",
     "dist:win": "build -w --publish always"
@@ -43,14 +44,14 @@
   "dependencies": {
     "discord-rpc": "^3.0.1",
     "electron-discord-register": "^1.0.0",
-    "electron-widevinecdm": "^5.0.2",
+    "electron-widevinecdm": "./electron-widevinecdm",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "setimmediate": "^1.0.5",
     "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
-    "electron": "3.0.9",
+    "electron": "^4.1.4",
     "electron-builder": "^19.56.2",
     "register-scheme": "0.0.2"
   }

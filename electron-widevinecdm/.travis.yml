@@ -1,0 +1,22 @@
+language: node_js
+node_js: node # Latest Stable Version
+
+os:
+  - linux
+  - osx
+  - windows
+  # TODO: Windows
+
+before_script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sleep 3; fi
+
+install:
+  - yarn --pure-lockfile
+  - cd example/ && yarn --pure-lockfile
+
+script:
+  - yarn test
+
+# Deploy Here
