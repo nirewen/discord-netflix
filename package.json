@@ -43,15 +43,15 @@
   "dependencies": {
     "discord-rpc": "^3.0.1",
     "electron-discord-register": "^1.0.0",
-    "electron-widevinecdm": "^5.0.2",
+    "electron-widevinecdm": "https://github.com/oscartbeaumont-ext/electron-widevinecdm-dev",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "setimmediate": "^1.0.5",
     "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
-    "electron": "3.0.9",
-    "electron-builder": "^19.56.2",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.43.0",
     "register-scheme": "0.0.2"
   }
 }
