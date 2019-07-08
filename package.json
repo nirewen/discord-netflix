@@ -1,13 +1,13 @@
 {
-  "name": "Netflix",
+  "name": "netflix",
   "version": "2.2.1",
   "description": "A Netflix wrapper with Discord Rich Presence",
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
-    "dist:mac": "build -m --publish always",
-    "dist:linux": "build -l --publish always",
-    "dist:win": "build -w --publish always"
+    "dist:mac": "build -m",
+    "dist:linux": "build -l",
+    "dist:win": "build -w"
   },
   "repository": {
     "type": "git",
