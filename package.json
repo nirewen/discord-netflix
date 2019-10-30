@@ -44,7 +44,7 @@
     "discord-rpc": "^3.0.1",
     "electron-discord-register": "^1.0.0",
     "electron-widevinecdm": "^5.0.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "moment": "^2.22.2",
     "setimmediate": "^1.0.5",
     "socket.io-client": "^2.2.0"
